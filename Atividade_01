@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		<h1>Exercicio 01</h1>
+	</title>
+</head>
+<body>
+	<!--Construir um algoritmo que leia 2 números e efetue a adição. Caso o valor somado seja maior que 20, este deverá ser apresentando somando-se a ele mais 8; caso o valor somado seja menor ou igual a 20, este deverá ser apresentado subtraindo-se 5.-->
+	<form action="" method="get" accept-charset="utf-8">
+		<label>Digite o primeiro numero: <br/>
+			<input type="number" name="num1">
+		</label><br/>
+		<label> Digite o segundo numero: <br/>
+			<input type="number" name="num2">
+		</label> <br/>
+		<input type="submit" name="Enviar" value="Enviar">
+	</form><br/>
+
+	<?php
+		if (isset($_GET['num1']) || isset($_GET['num2'])){
+			$numero1 = $_GET['num1'];
+			$numero2 = $_GET['num2'];
+
+			$soma = $numero1 + $numero2 ;
+
+			if ($soma > 20) {
+
+				$soma += 8;
+				echo 'O resultado é '. $soma .' !';
+			} else{
+				$soma -= 5;
+				echo 'O resultado é '. $soma .' !';
+			}
+		}
+		else{ 
+			echo 'Aguardando o valor ser informado!';			
+		};
+	?>
+</body>
+</html>
